@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #DEE3DD;
+	font-family: 'Roboto', sans-serif;
+	line-height: 18px;
+}
+
+
+a {
+	text-decoration: none;
+	color: #484848;
+}
+
+.btn-menu {
+	display: none;
+	padding: 20px;
+	background: #1D80C7;
+}
+
+.btn-menu .icon {
+	float: right;
+}
+
+.menu-container {
+	width: 20%;
+	min-width: 300px;
+	margin: 50px;
+	display: inline-block;
+	font-family: 'Roboto', sans-serif;
+	line-height: 18px;
+}
+
+.menu-container .menu {
+	width: 100%;
+}
+
+.menu-container ul {
+	list-style: none;
+}
+
+.menu-container .menu li a {
+	color: #fff;
+	display: block;
+	padding: 15px 20px;
+	background: #3F3F3F;
+}
+
+.menu-container .menu li a:hover {
+	background: #1A95D5;
+	color: #FFF;
+}
+
+.menu-container .menu .icon {
+	font-size: 12 px;
+	line-height: 18px;
+}
+
+.menu-container .menu .icon.left {
+	float: left;
+	margin-right: 10px;
+}
+
+.menu-container .menu .icon.right {
+	float: right;
+	margin-left: 10px;
+}
+
+.menu-container .menu ul {
+	display: none;
+}
+
+.menu-container .menu ul li a {
+	background: #838383;
+}
+
+.menu-container .menu .active > a {
+	background: #1A95B5;
+	color: #FFF;
+}
+
+@media screen and (max-width: 450ps) {
+	body {
+		padding-top: 80px;
+	}
+	
+	.menu-container {
+		margin: 0;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+	}
+	
+	.btn-menu {
+		display: block;
+	}
+	
+	.menu-container .menu {
+		display: none;
+	}
+}
+
+.Pictures {
+	display: inline-block;
+	padding: 50px 50px;
+	margin: 50px 50px;
+	width: 300px;
+	height: 300px;
+}
+
+.Pictures .Montegancedo {
+	width: 800px;
+	height: 300px;
+}
+
+.Pictures2 .fi {
+	background: #535352;
+	background-size: 300px 300px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+}
+

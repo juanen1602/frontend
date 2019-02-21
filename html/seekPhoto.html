@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="AppSeekPhoto">
+	<head>
+		<meta charset="utf-8">
+		<title>Buscar Foto</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<link rel="stylesheet" href="../css/seekPhoto.css">
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js">
+		</script>-->
+		<script src="../js/angular.js"></script>
+		<script src="../js/seekPhoto.js"></script>
+	</head>
+
+	<body ng-controller="SeekPhoto">
+		<div class="seekID">
+			<input type="number" placeholder="Introduce ID" ng-model="ID">
+			</input>
+			<button class="Seek" ng-click="getID()"><i class="icon left fa fa-search" aria-hidden="true"></i></button>
+		</div>
+
+		<div class="seekname">
+			<!--<input type="text" placeholder="Escribe nombre" ng-model="name">
+			</input>
+			<button ng-click="getPhotos()"><i class="icon left fa fa-search" aria-hidden="true"></i></button>-->
+			<!--<button><i class="icon left fa fa-file-archive" aria-hidden="true"></i></button>-->
+
+				<button type="submit" id="blob" ng-click="downloadZIP()"  ><img src="../images/winrar_icon.jpeg"></img></button>
+
+		</div>
+
+		<div>
+			<image src="../images/Montegancedo.png"style="display:none;"></image>
+		</div>
+
+		<div>
+			<h3 style="{{message[2]}}">{{message[0]}}</h3>
+		</div>
+
+		<div>
+			<h3 style="{{message[2]}}">{{message[1]}}</h3>
+		</div>
+
+		<div class="buttonAbove">
+			<a href="#" style="{{hideLastPhotos}}" ng-click="lastList()">Last</a>
+			<a href="#" style="{{hideNextPhotos}}" ng-click="nextList()">Next</a>
+		</div>
+
+		<div>
+			<img class="Photo" src="{{listPhotos[0]}}" style="{{hidePhotos[0]}}" title="{{floatingText[0]}}"></img>
+			<img class="Photo" src="{{listPhotos[1]}}" style="{{hidePhotos[1]}}" title="{{floatingText[1]}}"></img>
+			<img class="Photo" src="{{listPhotos[2]}}" style="{{hidePhotos[2]}}" title="{{floatingText[2]}}"></img>
+			<img class="Photo" src="{{listPhotos[3]}}" style="{{hidePhotos[3]}}" title="{{floatingText[3]}}"></img>
+			<img class="Photo" src="{{listPhotos[4]}}" style="{{hidePhotos[4]}}" title="{{floatingText[4]}}"></img>
+			<img class="Photo" src="{{listPhotos[5]}}" style="{{hidePhotos[5]}}" title="{{floatingText[5]}}"></img>
+			<img class="Photo" src="{{listPhotos[6]}}" style="{{hidePhotos[6]}}" title="{{floatingText[6]}}"></img>
+			<img class="Photo" src="{{listPhotos[7]}}" style="{{hidePhotos[7]}}" title="{{floatingText[7]}}"></img>
+			<img class="Photo" src="{{listPhotos[8]}}" style="{{hidePhotos[8]}}" title="{{floatingText[8]}}"></img>
+			<img class="Photo" src="{{listPhotos[9]}}" style="{{hidePhotos[9]}}" title="{{floatingText[9]}}"></img>
+			<img class="Photo" src="{{listPhotos[10]}}" style="{{hidePhotos[10]}}" title="{{floatingText[10]}}"></img>
+			<img class="Photo" src="{{listPhotos[11]}}" style="{{hidePhotos[11]}}" title="{{floatingText[11]}}"></img>
+			<img class="Photo" src="{{listPhotos[12]}}" style="{{hidePhotos[12]}}" title="{{floatingText[12]}}"></img>
+			<img class="Photo" src="{{listPhotos[13]}}" style="{{hidePhotos[13]}}" title="{{floatingText[13]}}"></img>
+			<img class="Photo" src="{{listPhotos[14]}}" style="{{hidePhotos[14]}}" title="{{floatingText[14]}}"></img>
+			<img class="Photo" src="{{listPhotos[15]}}" style="{{hidePhotos[15]}}" title="{{floatingText[15]}}"></img>
+			<img class="Photo" src="{{listPhotos[16]}}" style="{{hidePhotos[16]}}" title="{{floatingText[16]}}"></img>
+			<img class="Photo" src="{{listPhotos[17]}}" style="{{hidePhotos[17]}}" title="{{floatingText[17]}}"></img>
+			<img class="Photo" src="{{listPhotos[18]}}" style="{{hidePhotos[18]}}" title="{{floatingText[18]}}"></img>
+			<img class="Photo" src="{{listPhotos[19]}}" style="{{hidePhotos[19]}}" title="{{floatingText[19]}}"></img>
+			<img class="Photo" src="{{listPhotos[20]}}" style="{{hidePhotos[20]}}" title="{{floatingText[20]}}"></img>
+			<img class="Photo" src="{{listPhotos[21]}}" style="{{hidePhotos[21]}}" title="{{floatingText[21]}}"></img>
+			<img class="Photo" src="{{listPhotos[22]}}" style="{{hidePhotos[22]}}" title="{{floatingText[22]}}"></img>
+			<img class="Photo" src="{{listPhotos[23]}}" style="{{hidePhotos[23]}}" title="{{floatingText[23]}}"></img>
+			<img class="Photo" src="{{listPhotos[24]}}" style="{{hidePhotos[24]}}" title="{{floatingText[24]}}"></img>
+			<img class="Photo" src="{{listPhotos[25]}}" style="{{hidePhotos[25]}}" title="{{floatingText[25]}}"></img>
+			<img class="Photo" src="{{listPhotos[26]}}" style="{{hidePhotos[26]}}" title="{{floatingText[26]}}"></img>
+			<img class="Photo" src="{{listPhotos[27]}}" style="{{hidePhotos[27]}}" title="{{floatingText[27]}}"></img>
+			<img class="Photo" src="{{listPhotos[28]}}" style="{{hidePhotos[28]}}" title="{{floatingText[28]}}"></img>
+			<img class="Photo" src="{{listPhotos[29]}}" style="{{hidePhotos[29]}}" title="{{floatingText[29]}}"></img>
+
+		</div>
+
+		<div class="buttonBelow">
+			<a href="#" style="{{hideLastPhotos}}" ng-click="lastList()">Last</a>
+			<a href="#" style="{{hideNextPhotos}}" ng-click="nextList()">Next</a>
+		</div>
+
+		<div>
+			<iframe id="my_iframe" style="{{hideIFrame}}"></iframe>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js">
+		</script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="AppTask">
+	<head>
+		<meta charset="utf-8">
+		<title>Crear Tarea</title>
+		<link rel="stylesheet" href="../css/createTask.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js">
+		</script>
+		<script src="../js/createTask.js"></script>
+	</head>
+	<body ng-controller="taskandids">
+		<div class="button">
+			<button class="start" ng-click="nextState()" style="{{hideButtonStart}}">Start</button>
+			<button class="back" ng-click="lastState()" style="{{hideButtonBack}}">Back</button>
+			<button class="next" ng-click="nextState()" style="{{hideButtonNext}}">Next</button>
+			<button class="finish" ng-click="nextState()" style="{{hideButtonFinish}}">Finish</button>
+			<button class="reload" ng-click="nextState()" style="{{hideButtonReload}}">Reload</button>	
+		</div>
+		
+		<div>
+			<input class="slider" type="range" style="{{hideRange}}" ng-model="amount"
+			ng-change="getAmount(amount)" min="1" max="10000" step="1"></input>
+			<input class="number" type="number" style="{{hideNumber}}" ng-model="amountNum"
+			ng-keypress="getAmountNum(amountNum, $event)" min="1" max="10000"></input>
+		</div>	
+			
+		<div>
+			<input class="list" list="tags" name="tag" placeholder="Numero de Tags" 
+			onfocus="this.value=''" style="{{hideNumberTags}}" 
+			ng-model="amountTags" ng-change="getTags(amountTags)">
+			<datalist id="tags">
+				<option value="1"></option>
+				<option value="2"></option>
+				<option value="3"></option>
+				<option value="4"></option>
+				<option value="5"></option>
+			</datalist>	
+		</div>
+		
+		<div>
+			<input class="text" type="text" placeholder="Nombre tag{{listSize+1}}" style="{{hideTag}}"
+			ng-model="nameTag" ng-keypress="getNameTag(nameTag, $event)">
+			</input>
+		</div>
+		
+		<div>
+			<ul class="listtags" style="{{hideListParameters}}">
+				<li>Amount: {{amount}}</li>
+				<li>Tags:</li>
+				<ul>
+					<li style="{{hideTag1}}">{{listTags[0]}}</li>
+					<li style="{{hideTag2}}">{{listTags[1]}}</li>
+					<li style="{{hideTag3}}">{{listTags[2]}}</li>
+					<li style="{{hideTag4}}">{{listTags[3]}}</li>
+					<li style="{{hideTag5}}">{{listTags[4]}}</li>
+				</ul>
+				<li>Autor: Juanen</li>	
+			</ul>	
+		</div>
+		
+		<div>
+			<p class="paragraph">{{text}}</p>
+		<div>				
+		
+	</body>		
+</html>	

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="AppCamera">
+	<head>
+		<meta charset="utf-8">
+		<title>Camara en Directo</title>
+		<link rel="stylesheet" href="../css/directVideo.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js">
+		</script>
+		<script src="../js/directVideo.js">
+		</script>	
+	</head>
+	<body ng-controller="videoandparameters">
+		<div class="directvideo">
+			<img src="{{video}}" class="screen" style="{{hidden}}">
+			</img>
+			
+			<img src="../images/stoppedVideo.jpeg" class="stopped" style="{{hiddenStopped}}">
+			</img>
+		</div>
+		
+		<div class="parameters">
+			
+			<h3>Brightness(min: {{brightnessMin}} max: {{brightnessMax}})</h3>
+			<input type="range" name="range" ng-model="brightnessSlider" ng-change="putBrightness(brightnessSlider)"
+			min="{{brightnessMin}}" max="{{brightnessMax}}" step="1"></input>
+			<input type="number" class="brightness" ng-model="brightnessNumber" ng-keypress="putBrightnessNum(brightnessNumber, $event)">
+			</input>
+			
+			<h3>Gamma (min: {{gammaMin}} max: {{gammaMax}})</h3>
+			<input type="range" name="range" ng-model="gammaSlider" ng-change="putGamma(gammaSlider)"
+			min="{{gammaMin}}" max="{{gammaMax}}" step="1"></input>
+			<input type="number" class="gamma" ng-model="gammaNumber" ng-keypress="putGammaNum(gammaNumber, $event)">
+			</input>
+			
+			<h3>Gain (min: {{gainMin}} max: {{gainMax}})</h3>
+			<input type="range" name="range" ng-model="gainSlider" ng-change="putGain(gainSlider)" 
+			min="{{gainMin}}" max="{{gainMax}}" step="1"></input>
+			<input type="number" class="gain" ng-model="gainNumber" ng-keypress="putGainNum(gainNumber, $event)">
+			</input>
+			
+			<h3>Exposure (min: {{exposureMin}} max: {{exposureMax}})</h3>
+			<input type="range" name="range" ng-model="exposureSlider" ng-change="putExposure(exposureSlider)"
+			min="0" max="100"></input>
+			<input type="number" class="exposure" ng-model="exposureNumber" ng-keypress="putExposureNum(exposureNumber, $event)">
+			</input>
+			
+		</div>
+		
+		<div class="button">
+			<button ng-click="obtainVideo()" class="StartStop">{{nameButton}}</button>
+		</div>
+					
+	</body>		
+</html>	

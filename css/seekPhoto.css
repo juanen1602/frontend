@@ -1,0 +1,63 @@
+body {
+  background: #F6BE5B;
+}
+
+button {
+  cursor: pointer;
+}
+
+.seekID {
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.Photo {
+  margin: 4%;
+  width: 40%;
+  cursor: pointer;
+}
+
+input[type=number], select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 10%;
+  margin: 40%;
+  margin-top: 0%;
+  margin-bottom: 5%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.Seek {
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.buttonAbove {
+  margin: 45%;
+  margin-top: 0%;
+  margin-bottom: 2%;
+}
+
+.buttonBelow {
+  margin: 45%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
